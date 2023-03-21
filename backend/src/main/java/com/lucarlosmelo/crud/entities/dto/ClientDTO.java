@@ -1,10 +1,13 @@
 package com.lucarlosmelo.crud.entities.dto;
 
+import java.io.Serializable;
 import java.time.Instant;
+import java.util.Objects;
 
 import com.lucarlosmelo.crud.entities.Client;
 
-public class ClientDTO {
+public class ClientDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private Long id;
 	private String name;
@@ -12,11 +15,11 @@ public class ClientDTO {
 	private Double income;
 	private Instant birthDate;
 	private Integer children;
-	
+
 	public ClientDTO() {
-		
+
 	}
-	
+
 	public ClientDTO(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
 		super();
 		this.id = id;
@@ -35,7 +38,7 @@ public class ClientDTO {
 		this.birthDate = entity.getBirthDate();
 		this.children = entity.getChildren();
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -83,5 +86,22 @@ public class ClientDTO {
 	public void setChildren(Integer children) {
 		this.children = children;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ClientDTO other = (ClientDTO) obj;
+		return Objects.equals(id, other.id);
+	}
+
 }
