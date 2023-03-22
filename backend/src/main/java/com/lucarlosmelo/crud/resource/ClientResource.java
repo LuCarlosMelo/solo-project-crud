@@ -1,4 +1,4 @@
-package com.lucarlosmelo.crud;
+package com.lucarlosmelo.crud.resource;
 
 import java.net.URI;
 
