@@ -58,7 +58,11 @@ public class Client implements Serializable {
 	public String getCpf() {
 		return cpf;
 	}
-
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
 	public Double getIncome() {
 		return income;
 	}
@@ -69,6 +73,10 @@ public class Client implements Serializable {
 
 	public Instant getBirthDate() {
 		return birthDate;
+	}
+	
+	public void setBirthDate(Instant birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public Integer getChildren() {
